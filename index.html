@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,7 +10,7 @@
       --bg:#0f1724;
       --card:#0b1220;
       --muted:#9aa4b2;
-      --accent:#06b6d4; /* cyan */
+      --accent:#06b6d4;
       --glass: rgba(255,255,255,0.03);
       color-scheme: dark;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
@@ -24,13 +24,15 @@
     }
 
     .container{width:100%;max-width:960px}
+    /* এখন এক কলাম লেআউট */
     .card{
-      display:grid;grid-template-columns: 1fr 380px;gap:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:block;
+      gap:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border-radius:14px;padding:28px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 12px 40px rgba(2,6,23,0.7);
-      align-items:center;
     }
 
-    /* Left: intro */
+    /* Intro */
     .intro{padding:12px 6px}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{
@@ -40,7 +42,7 @@
     .subtitle{color:var(--muted);margin:0 0 14px}
     .desc{color:var(--muted);line-height:1.5;margin-bottom:18px}
 
-    .social-grid{display:flex;flex-wrap:wrap;gap:10px}
+    .social-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
     .link-card{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03);min-width:220px;text-decoration:none;color:inherit;transition:transform .14s ease, box-shadow .14s ease}
     .link-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.5)}
     .link-card .icon{width:28px;height:28px;flex-shrink:0}
@@ -48,22 +50,14 @@
     .link-title{font-weight:600}
     .link-sub{font-size:13px;color:var(--muted)}
 
-    /* Right: profile */
-    .profile{display:flex;flex-direction:column;align-items:center;padding:12px}
-    .avatar-wrap{width:200px;height:200px;border-radius:18px;padding:6px;background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent);border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
-    .avatar{width:100%;height:100%;border-radius:14px;object-fit:cover;display:block}
-    .name{margin-top:14px;font-weight:700}
-    .role{font-size:13px;color:var(--muted);margin-bottom:12px}
-
-    .contact-actions{display:flex;gap:10px;margin-top:8px}
+    /* নিচের বোতন */
+    .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
     .btn-primary{background:linear-gradient(90deg,var(--accent), #7c3aed);padding:10px 14px;border-radius:10px;color:#021018;font-weight:700;border:none;cursor:pointer;text-decoration:none}
     .btn-ghost{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;text-decoration:none}
 
-    footer{grid-column:1/-1;margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
+    footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
 
     @media (max-width:880px){
-      .card{grid-template-columns:1fr;}
-      .avatar-wrap{width:160px;height:160px}
       .link-card{min-width:45%}
     }
   </style>
@@ -79,6 +73,7 @@
             <div style="font-size:13px;color:var(--muted)">CSE Student • Developer</div>
           </div>
         </div>
+
         <h1>Let’s connect and collaborate professionally.</h1>
         <p class="subtitle">I’m open to projects, discussions, and creative problem-solving.</p>
         <p class="desc">Use the links to reach out anytime.</p>
@@ -113,26 +108,13 @@
             <span class="icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
             <div class="link-meta"><div class="link-title">Email</div><div class="link-sub">piasahmmed404@gmail.com</div></div>
           </a>
-
         </div>
 
-        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <div class="actions">
           <button class="btn-primary" onclick="copyText('piasahmmed404@gmail.com')">Copy Email</button>
           <a class="btn-ghost" href="tel:+8801XXXXXXXXX">Call</a>
         </div>
       </div>
-
-      <aside class="profile" aria-label="Profile">
-        <div class="avatar-wrap">
-          <img class="avatar" src="profile.jpg" alt="PIAS profile photo">
-        </div>
-        <div class="name">PIAS</div>
-        <div class="role">CSE Student • Developer</div>
-        <div class="contact-actions">
-          <a class="btn-primary" href="mailto:piasahmmed404@gmail.com">Email</a>
-          <a class="btn-ghost" href="https://github.com/PIAS404" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-      </aside>
 
       <footer>Clean, professional contact page — customize colors or wording anytime.</footer>
     </main>
